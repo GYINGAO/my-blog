@@ -1,7 +1,7 @@
 ---
 home: true
-heroText: vuepress-theme-reco
-tagline: A simple and beautiful vuepress blog theme.
+heroText: 百学须先立志
+tagline: 博学之，审问之，慎思之，明辨之，笃行之
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',
@@ -17,11 +17,11 @@ bgImageStyle: {
 isShowTitleInHome: false
 actionText: Guide
 actionLink: /views/other/guide
-features:
-- title: Yesterday
-  details: 开发一款看着开心、写着顺手的 vuepress 博客主题
-- title: Today
-  details: 希望帮助更多的人花更多的时间在内容创作上，而不是博客搭建上
-- title: Tomorrow
-  details: 希望更多的爱好者能够参与进来，帮助这个主题更好的成长
+# features:
+# - title: Yesterday
+#   details: 开发一款看着开心、写着顺手的 vuepress 博客主题
+# - title: Today
+#   details: 希望帮助更多的人花更多的时间在内容创作上，而不是博客搭建上
+# - title: Tomorrow
+#   details: 希望更多的爱好者能够参与进来，帮助这个主题更好的成长
 ---

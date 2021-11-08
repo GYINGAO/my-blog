@@ -1,6 +1,4 @@
 module.exports = [
-  // 进度条插件
-  // ['@vuepress/nprogress'],
   // 流程图插件
   ['flowchart'],
   // 标签加强
@@ -10,23 +8,12 @@ module.exports = [
     'dynamic-title',
     {
       showIcon: '/favicon.ico',
-      showText: '(/≧▽≦/)欢迎帅哥美女！',
+      showText: '欢迎帅哥美女！',
       hideIcon: '/favicon.ico',
-      hideText: '(●—●)呜呜，不要走嘛！！',
+      hideText: '呜呜，不要走嘛！！',
       recoverTime: 2000,
     },
   ],
-  // 更新刷新插件
-  // [
-  //   '@vuepress/pwa',
-  //   {
-  //     serviceWorker: true,
-  //     updatePopup: {
-  //       message: '发现新内容可用',
-  //       buttonText: '刷新',
-  //     },
-  //   },
-  // ],
   // 代码复制弹窗插件
   [
     'nuggets-style-copy',
@@ -45,7 +32,7 @@ module.exports = [
       meting: {
         server: 'netease', // 音乐平台  可选值： "netease" | "tencent" | "xiami"
         type: 'playlist', // 资源类型（播放列表、单曲、专辑等）  可选值： "song" | "album" | "artist" | "playlist"
-        mid: '5261808563', // 资源 ID
+        mid: '2658047965', // 资源 ID
       },
       // 不配置该项的话不会出现全局播放器
       aplayer: {
@@ -115,6 +102,24 @@ module.exports = [
       ribbonAnimationShow: true, // 滑动彩带
     },
   ],
+  // 看板娘
   ['@vuepress-reco/vuepress-plugin-kan-ban-niang', {}],
+  // 上次更新时间，基于git commit
   ['@vuepress/last-updated'],
+  // 将中文路径转换为拼音路径
+  [
+    'permalink-pinyin',
+    {
+      lowercase: true, // Converted into lowercase, default: true
+      separator: '-', // Separator of the slug, default: '-'
+    },
+  ],
+  // 百度站点自动推送 Vuepress 插件
+  ['baidu-autopush'],
+  // markdown Tabs
+  ['element-tabs'],
+  // 页面滚动时自动激活侧边栏链接的插件
+  ['@vuepress/active-header-links'],
+  // 一个基于 nprogress (opens new window)的进度条插件
+  ['@vuepress/nprogress'],
 ];
