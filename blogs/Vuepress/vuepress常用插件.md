@@ -510,3 +510,42 @@ jQuery(document).ready(function ($) {
     }]
   ],
 ```
+
+## 处理复制操作
+
+参考 [Vuepress社区](https://vuepress-community.netlify.app/zh/plugins/copyright/)
+
+`vuepress-plugin-copyright` 处理你的 VuePress 站点中的复制操作
+
+**安装**
+
+```bash
+yarn add vuepress-plugin-copyright -D
+```
+
+**配置**
+
+```js
+// .vuepress/config.js
+module.exports = {
+  plugins: [
+    [
+      'copyright',
+      {
+        noCopy: false, // 选中的文字将无法被复制
+        minLength: 50, // 如果长度超过 100 个字符
+        authorName: 'Rick',
+        clipboardComponent: '.vuepress/components/clipboardComponent.vue',
+      },
+    ],
+  ],
+}
+```
+
+## 自动生成侧边栏
+
+ 参考[vuepress-plugin-auto-sidebar](https://shanyuhai123.github.io/vuepress-plugin-auto-sidebar/zh/)
+
+::: warning 注意
+该插件只会为同一个目录下的文章生成侧边栏
+:::

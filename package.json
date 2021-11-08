@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "author": "reco_luan",
   "scripts": {
-    "dev": "vuepress dev . --host \"localhost\"",
-    "build": "vuepress build ."
+    "dev": "cross-env NODE_ENV=development vuepress dev . --host \"localhost\"",
+    "build": "cross-env NODE_ENV=production vuepress build ."
   },
   "devDependencies": {
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
+    "cross-env": "^7.0.3",
     "vuepress": "1.8.2",
+    "vuepress-plugin-auto-sidebar": "^2.3.2",
     "vuepress-plugin-baidu-autopush": "^1.0.1",
     "vuepress-plugin-boxx": "^0.0.7",
+    "vuepress-plugin-copyright": "^1.0.2",
     "vuepress-plugin-cursor-effects": "^1.0.2",
     "vuepress-plugin-dynamic-title": "^1.0.0",
     "vuepress-plugin-element-tabs": "^0.2.8",

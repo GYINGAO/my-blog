@@ -80,7 +80,7 @@ module.exports = {
     searchMaxSuggestions: 10,
     lastUpdated: '上次更新时间',
     author: 'Rick',
-    authorAvatar: '/img/avatar.png',
+    authorAvatar: '/img/avatar.jpg',
     record: '蜀ICP备2021026631号',
     recordLink: 'http://www.rickgy.ltd',
     // cyberSecurityRecord: ' 公安网备案号',

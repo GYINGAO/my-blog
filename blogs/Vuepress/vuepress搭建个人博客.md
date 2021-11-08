@@ -2,10 +2,11 @@
 title: vuepress 搭建个人博客
 date: 2020-11-06
 tags:
-- "前端"
-- "博客"
+- 前端
+- 博客
+- 教程
 categories:
-- "Vuepress"
+- Vuepress
 ---
 
 > 使用 [vuepress](https://vuepress.vuejs.org/zh/) 搭建个人博客，主题使用 [vuepress-theme-reco](https://vuepress-theme-reco.recoluan.com/)
@@ -373,6 +374,46 @@ module.exports = {
 };
 ```
 :::
+
+## 3 自动部署
+
+## 4 遇到的问题
+
+### 打包失败
+
+在执行 `yarn build` 的时候，报错缺少 `client.json` 文件，此时需要将环境变量 `NODE_ENV` 设置为 `production` 即可。设置的方法：
++ 在 `Powershell` 命令行窗口设置环境变量
+
+```bash
+$env:NODE_ENV="production"
+```
+
++ 在高级系统设置中直接修改系统环境变量 `NODE_ENV`
+
++ 通过 `cross-env` 插件修改
+
+**安装**
+
+```bash
+yarn add cross-env -D
+```
+
+**修该script脚本**
+
+```json
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development vuepress dev . --host \"localhost\"",
+    "build": "cross-env NODE_ENV=production vuepress build ."
+  },
+```
+
+### 文章路径中文
+
+在文章路径有中文时打不开文章详情，可以通过安装 `vuepress-plugin-permalink-pinyin` 插件解决
+
+
+
+
 
 
 

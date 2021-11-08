@@ -122,4 +122,29 @@ module.exports = [
   ['@vuepress/active-header-links'],
   // 一个基于 nprogress (opens new window)的进度条插件
   ['@vuepress/nprogress'],
+  [
+    'copyright',
+    {
+      disabled: true,
+      noCopy: false, // 选中的文字将无法被复制
+      minLength: 100, // 如果长度超过 100 个字符
+      authorName: 'Rick',
+      clipboardComponent: '.vuepress/components/clipboardComponent.vue',
+    },
+  ],
+  // 自动生成sidebar
+  [
+    'vuepress-plugin-auto-sidebar',
+    {
+      sidebarDepth: 1,
+      collapse: {
+        open: true,
+      },
+      sort: {
+        // 更多选项:
+        // `asc`、`desc`、`created_time_asc`、`created_time_desc`
+        mode: 'asc',
+      },
+    },
+  ],
 ];

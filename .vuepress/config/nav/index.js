@@ -9,16 +9,11 @@ module.exports = [
     link: '/timeline/',
     icon: 'reco-date',
   },
-  {
-    text: '文档',
-    icon: 'reco-message',
-    items: [
-      {
-        text: 'vuepress-reco',
-        link: '/docs/theme-reco/',
-      },
-    ],
-  },
+  // {
+  //   text: '文档',
+  //   icon: 'reco-message',
+  //   items: [],
+  // },
   {
     text: '快速访问',
     icon: 'reco-menu',

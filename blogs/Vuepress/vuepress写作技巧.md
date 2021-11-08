@@ -62,6 +62,7 @@ lang: en-US
 | isTimeLine    | Boolean           | 是否在时间线中显示           |
 | isShowComment | Boolean           | 是否显示评论                 |
 | sidebarDepth  | Number            | 侧边栏显示深度               |
+| copyright     | Boolean           | 是否启用copyright插件        |
 
 ### 完整示例
 
@@ -204,3 +205,7 @@ export default {
 + 行数区间: 例如 {5-8}, {3-10}, {10-17}
 + 多个单行: 例如 {4,7,9}
 + 行数区间与多个单行: 例如 {4,7-13,16,23-27,40}
+
+## 其他
+
++ 摘要：`<!--more-->` 以上的内容会被当成摘要
