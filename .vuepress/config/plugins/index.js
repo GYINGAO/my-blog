@@ -132,19 +132,19 @@ module.exports = [
       clipboardComponent: '.vuepress/components/clipboardComponent.vue',
     },
   ],
-  // 自动生成sidebar
-  [
-    'vuepress-plugin-auto-sidebar',
-    {
-      sidebarDepth: 1,
-      collapse: {
-        open: true,
-      },
-      sort: {
-        // 更多选项:
-        // `asc`、`desc`、`created_time_asc`、`created_time_desc`
-        mode: 'asc',
-      },
-    },
-  ],
+  // // 自动生成sidebar
+  // [
+  //   'vuepress-plugin-auto-sidebar',
+  //   {
+  //     sidebarDepth: 1,
+  //     collapse: {
+  //       open: true,
+  //     },
+  //     sort: {
+  //       // 更多选项:
+  //       // `asc`、`desc`、`created_time_asc`、`created_time_desc`
+  //       mode: 'asc',
+  //     },
+  //   },
+  // ],
 ];
