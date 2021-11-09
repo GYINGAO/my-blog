@@ -4,8 +4,9 @@ const plugins = require('./config/plugins/');
 
 module.exports = {
   title: "Rick's blog",
-  description: '',
+  description: '博学之，审问之，慎思之，明辨之，笃行之',
   dest: 'dist',
+  base: '/problog',
   locales: {
     '/': {
       lang: 'zh-CN', // 设置语言

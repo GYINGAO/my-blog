@@ -29,10 +29,11 @@ module.exports = [
     'meting',
     {
       //metingApi: "https://meting.sigure.xyz/api/music",
+      // https://music.163.com/playlist?id=118040733&userid=404358444
       meting: {
         server: 'netease', // 音乐平台  可选值： "netease" | "tencent" | "xiami"
         type: 'playlist', // 资源类型（播放列表、单曲、专辑等）  可选值： "song" | "album" | "artist" | "playlist"
-        mid: '2658047965', // 资源 ID
+        mid: '118040733', // 资源 ID
       },
       // 不配置该项的话不会出现全局播放器
       aplayer: {

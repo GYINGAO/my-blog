@@ -7,6 +7,10 @@ tags:
 - 教程
 categories:
 - Vuepress
+
+keys:
+ - '123456'
+ - 'rick'
 ---
 
 > 使用 [vuepress](https://vuepress.vuejs.org/zh/) 搭建个人博客，主题使用 [vuepress-theme-reco](https://vuepress-theme-reco.recoluan.com/)

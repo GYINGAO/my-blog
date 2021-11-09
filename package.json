@@ -4,7 +4,8 @@
   "author": "reco_luan",
   "scripts": {
     "dev": "cross-env NODE_ENV=development vuepress dev . --host \"localhost\"",
-    "build": "cross-env NODE_ENV=production vuepress build ."
+    "build": "cross-env NODE_ENV=production vuepress build .",
+    "deploy": "bash deploy.sh"
   },
   "devDependencies": {
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",

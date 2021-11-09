@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 # 确保脚本抛出遇到的错误
 set -e
 
@@ -7,10 +9,19 @@ yarn build
 # 进入生成的文件夹
 cd dist
 
-git init 
-git add -A
-git commit -m "deploy"
+# 如果是发布到自定义域名
+ echo 'www.rickgy.top' > CNAME
 
-git push -f git@39.103.236.222:/home/git/blog.git master
+git init
+git add -A
+git commit -m 'deploy'
+
+# 如果发布到 https://<USERNAME>.github.io
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+
+# 如果发布到 https://<USERNAME>.github.io/<REPO>
+# 请把 penggang-home/blog-two.git 换成你的项目地址
+git push -f git@github.com:GYINGAO/problog.git master:gh-pages
+# git push -f git@gitee.com:Rickgy/myblog.git master:gh-pages
 
 cd -
