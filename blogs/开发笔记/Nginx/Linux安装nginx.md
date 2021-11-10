@@ -4,11 +4,13 @@ date: 2021-10-24 18:00:00
 tags:
  - 服务器
  - 环境
- - 教程
- - Nginx
+ - 教程 
  - 防火墙
-categories:
  - Linux
+ - Nginx
+ - 后端
+categories:
+ - 开发笔记
 ---
 
 ##  简介

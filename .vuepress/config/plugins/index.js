@@ -30,10 +30,11 @@ module.exports = [
     {
       //metingApi: "https://meting.sigure.xyz/api/music",
       // https://music.163.com/playlist?id=118040733&userid=404358444
+      // https://music.163.com/playlist?id=2204388891&userid=404358444
       meting: {
         server: 'netease', // 音乐平台  可选值： "netease" | "tencent" | "xiami"
         type: 'playlist', // 资源类型（播放列表、单曲、专辑等）  可选值： "song" | "album" | "artist" | "playlist"
-        mid: '118040733', // 资源 ID
+        mid: '2204388891', // 资源 ID
       },
       // 不配置该项的话不会出现全局播放器
       aplayer: {
@@ -133,19 +134,19 @@ module.exports = [
       clipboardComponent: '.vuepress/components/clipboardComponent.vue',
     },
   ],
-  // // 自动生成sidebar
-  // [
-  //   'vuepress-plugin-auto-sidebar',
-  //   {
-  //     sidebarDepth: 1,
-  //     collapse: {
-  //       open: true,
-  //     },
-  //     sort: {
-  //       // 更多选项:
-  //       // `asc`、`desc`、`created_time_asc`、`created_time_desc`
-  //       mode: 'asc',
-  //     },
-  //   },
-  // ],
+  // 自动生成sidebar
+  [
+    'vuepress-plugin-auto-sidebar',
+    {
+      sidebarDepth: 1,
+      collapse: {
+        open: true,
+      },
+      sort: {
+        // 更多选项:
+        // `asc`、`desc`、`created_time_asc`、`created_time_desc`
+        mode: 'asc',
+      },
+    },
+  ],
 ];

@@ -6,7 +6,6 @@ module.exports = {
   title: "Rick's blog",
   description: '博学之，审问之，慎思之，明辨之，笃行之',
   dest: 'dist',
-  base: '/problog',
   locales: {
     '/': {
       lang: 'zh-CN', // 设置语言
@@ -14,7 +13,7 @@ module.exports = {
   },
   head: [
     // 网页标签栏图标
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/img/favicon.ico' }],
     // 移动栏优化
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
     // 引入jquery
@@ -43,6 +42,12 @@ module.exports = {
     subSidebar: 'auto',
     nav,
     sidebar,
+    // 博客加密
+    // keyPage: {
+    //   keys: ['e10adc3949ba59abbe56e057f20f883e'], // 1.3.0 版本后需要设置为密文
+    //   color: '#42b983', // 登录页动画球的颜色
+    //   lineColor: '#42b983', // 登录页动画线的颜色
+    // },
     blogConfig: {
       category: {
         location: 2,
@@ -83,7 +88,7 @@ module.exports = {
     author: 'Rick',
     authorAvatar: '/img/avatar.jpg',
     record: '蜀ICP备2021026631号',
-    recordLink: 'http://www.rickgy.ltd',
+    recordLink: 'https://beian.miit.gov.cn/',
     // cyberSecurityRecord: ' 公安网备案号',
     // cyberSecurityLink: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=备案号',
     startYear: '2020',

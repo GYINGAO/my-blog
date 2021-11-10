@@ -5,10 +5,11 @@ tags:
  - 教程
  - 服务器
  - 部署
-
-categories:
  - Linux
  - Vue
+ - 前端
+categories:
+ - 开发笔记
 ---
 
 
@@ -92,16 +93,8 @@ systemctl start jenkins
 
 访问 8080 端口，初始密码在 `/var/lib/jenkins/secrets/initialAdminPassword`
 
-### 安装插件
+## 4 安装插件
 
-![image-20211109163755910](http://r1snha2jc.hn-bkt.clouddn.com//imgimage-20211109163755910.png)
-
-安装 `NodeJS` 插件
-
-### 创建用户
-
-![image-20211109164002361](http://r1snha2jc.hn-bkt.clouddn.com//imgimage-20211109164002361.png)
-
-## 4 构建任务
+## 5 构建任务
 
 点击  `create a job` 输入任务名称，选择构建自由风格的软件项目

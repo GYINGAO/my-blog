@@ -5,12 +5,9 @@ tags:
 - 前端
 - 博客
 - 教程
-categories:
 - Vuepress
-
-keys:
- - '123456'
- - 'rick'
+categories:
+- 开发笔记
 ---
 
 > 使用 [vuepress](https://vuepress.vuejs.org/zh/) 搭建个人博客，主题使用 [vuepress-theme-reco](https://vuepress-theme-reco.recoluan.com/)
@@ -380,6 +377,104 @@ module.exports = {
 :::
 
 ## 3 自动部署
+
+参考
++ [vuepress 部署](https://vuepress.vuejs.org/zh/guide/deploy.html)
++ [利用Git Hooks简单部署、更新Web应用](https://www.jianshu.com/p/52bfa850500b)
++ [VuePress +Nginx+Git私服实现自动部署](http://www.manongjc.com/detail/17-spjugocissllozb.html)
++ [Linux服务器搭建Git远程仓库，上传本地代码库](https://blog.csdn.net/qq_40018938/article/details/80751551?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-2.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-2.no_search_link)
++ [本地代码Git直接上传到Linux服务器 创建git 服务器](https://blog.csdn.net/qq_35646802/article/details/101025375)
+
+`vuepress` 属于静态网页，可以部署在 `GitHub Pages` 或者 `Gitee Pages` 中。由于我有一台阿里云服务器，因此我选择把他部署在我自己的服务器上。
+
+那么如何实现自动部署在自己的服务器上呢？参考 `GitHub Pages` 的自动部署方式，通过 `Git` 和 `Nginx` 就可以实现。在服务器上新建一个空的 `git` 仓库，然后把打包后的静态文件上传到这个仓库中。借助 `git hooks` 可以在仓库更新后执行额外的任务，将仓库中的代码克隆到 `nginx` 目录中，这样就完成了 `vuepress` 自动部署到云服务器上。如何在 `Linux` 安装 `Git` 和 `Nginx` 就不再赘述，有兴趣可以参考[这篇文章]('/blogs/开发笔记/Nginx/Linux安装nginx.md')
+
+### 服务器操作
+
+**创建 `git` 用户**
+
+```bash
+# 新建用户
+adduser git
+# 设置用户密码
+passwd git 
+```
+
+**新建裸仓库**
+
+远程仓库通常只是一个裸仓库（bare repository），即一个没有当前工作目录的仓库。因为该仓库只是一个合作媒介，所以不需要从硬盘上取出最新版本的快照；仓库里存放的仅仅是 `Git` 的数据。简单地说，裸仓库就是你工作目录中 `.git` 子目录内的内容
+
+```bash
+# 新建裸仓库
+mkdir /home/git
+cd /home/git
+git init --bare blog.git
+
+# 将 裸仓库权限赋给 git 用户
+chown -R git:git blog.git
+```
+
+**添加 hooks**
+```bash
+# 进入裸仓库的hooks目录
+cd /home/git/blog.git
+
+# 复制post-update，再编辑此文件
+cp post-update.sample post-update
+
+# post-update中的内容
+cd /usr/local/nginx/ # 进入nginx项目目录
+rm -rf blog/ # 删除blog目录
+git clone /home/git/blog.git # 获取仓库里的新提交
+
+# 为post-update添加相关权限
+chown -R git:git post-update
+chmod +x post-update # 设置为可执行文件
+```
+
+### 本地操作
+
+**新建脚本文件**
+
+在项目根目录下新建 `deploy.sh`，内容如下
+
+```bash
+#!/usr/bin/env sh
+
+# 确保脚本抛出遇到的错误
+set -e
+
+# 生成静态文件
+yarn build
+
+# 进入生成的文件夹
+cd dist
+
+git init
+git add -A
+git commit -m 'deploy'
+
+# 发布到自定义服务器的git仓库
+git push -f git@39.103.236.222:/home/git/blog.git master
+
+cd -
+```
+
+**修改 `package.json`**
+```json
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development vuepress dev . --host \"localhost\"",
+    "build": "cross-env NODE_ENV=production vuepress build .",
+    "deploy": "bash deploy.sh"
+  }
+```
+
+执行命令
+
+由于 cmd 不支持 bash 命令，需要用 git bash 工具执行
+```bash
+yarn deploy
+``` 
 
 ## 4 遇到的问题
 

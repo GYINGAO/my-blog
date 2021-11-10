@@ -25,7 +25,7 @@ module.exports = [
     ],
   },
   {
-    text: '联系我',
+    text: '关于我',
     icon: 'reco-message',
     items: [
       {

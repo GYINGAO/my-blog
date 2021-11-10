@@ -2,11 +2,12 @@
 title: Vuepress 常用插件
 date: 2021-11-08
 tags:
-  - '插件'
-  - '前端'
-  - '博客'
+  - 插件
+  - 前端
+  - 博客
+  - Vuepress
 categories:
-  - 'Vuepress'
+  - 开发笔记
 ---
 
 ::: tip

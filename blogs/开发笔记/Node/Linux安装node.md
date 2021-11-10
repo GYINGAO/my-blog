@@ -6,9 +6,11 @@ tags:
  - 环境
  - 教程
  - nvm
- - node
-categories:
  - Linux
+ - Node
+ - 后端
+categories:
+ - 开发笔记
 ---
 
 node的安装方式有两种，一是直接安装指定版本的node，二是通过nvm来管理node。本文采取nvm的方式安装node。

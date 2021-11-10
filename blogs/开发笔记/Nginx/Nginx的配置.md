@@ -4,9 +4,11 @@ date: 2021-10-23 18:00:00
 tags:
  - 服务器
  - 配置
- - Nginx
-categories:
  - Linux
+ - Nginx
+ - 后端
+categories:
+ - 开发笔记
 ---
 
 ## 基本说明
