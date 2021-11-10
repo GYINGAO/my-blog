@@ -13,7 +13,7 @@ module.exports = {
   },
   head: [
     // 网页标签栏图标
-    ['link', { rel: 'icon', href: '/img/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
     // 移动栏优化
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
     // 引入jquery
